@@ -41,6 +41,7 @@ export const createNoteSchema = {
 // PATCH / notes/:notesId
 
 export const updateNoteSchema = {
+  ...noteIdSchema,
   [Segments.BODY]: Joi.object({
     title: Joi.string().min(1).optional(),
     content: Joi.string().allow('').optional(),
