@@ -10,6 +10,7 @@ import { notFoundHandler } from './middleware/notFoundHandler.js';
 import { errorHandler } from './middleware/errorHandler.js';
 import authRoutes from './routes/authRoutes.js';
 import cookieParser from 'cookie-parser';
+import userRoutes from './routes/userRoutes.js';
 
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
@@ -24,6 +25,7 @@ app.use(authRoutes);
 app.use(notFoundHandler);
 app.use(errors());
 app.use(errorHandler);
+app.use(userRoutes);
 
 await connectMongoDB();
 
