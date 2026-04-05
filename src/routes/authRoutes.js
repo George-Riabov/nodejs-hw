@@ -1,20 +1,21 @@
 import { Router } from 'express';
 import { celebrate } from 'celebrate';
+
 import {
   loginUser,
   logoutUser,
   registerUser,
   refreshUserSession,
-  requestResetEmailSchema,
+  requestResetEmail,
+  resetPassword,
 } from '../controllers/authController.js';
+
 import {
   loginUserSchema,
   registerUserSchema,
-  requestResetEmail,
+  requestResetEmailSchema,
+  resetPasswordSchema,
 } from '../validations/authValidation.js';
-
-import { resetPassword } from '../controllers/authController.js';
-import { resetPasswordSchema } from '../validations/authValidation.js';
 
 const router = Router();
 
